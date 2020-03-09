@@ -340,7 +340,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 40
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -575,25 +575,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88af2229f89e024b90480e03d418b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iniWald: 45
   gebWald: 4
   nemWald: 3
-  iniWasser: 0
   gebWasser: 4
   nemWasser: 3
-  iniGestein: 0
   gebGestein: 4
   nemGestein: 3
-  iniSand: 0
   gebSand: 4
   nemSand: 3
-  rechenRunden: 1
-  kartenMasse: {x: 16, y: 16, z: 0}
+  gebWiese: 4
+  nemWiese: 3
+  rechenRunden: 4
+  kartenMasse: {x: 128, y: 128, z: 0}
   topMap: {fileID: 696747320}
   botMap: {fileID: 112323385}
-  waldTile: {fileID: 11400000, guid: 46f79f53487f2d4408317bdb2fbb460c, type: 2}
-  wasserTile: {fileID: 11400000, guid: 3c14dfc407b530a45b2b5952b5495e60, type: 2}
-  wieseTile: {fileID: 11400000, guid: 933d57ed697f51e4f8c9559a50e38a1e, type: 2}
+  waldTile: {fileID: 11400000, guid: 785d1f4734895b04e85038acc4b10701, type: 2}
+  wasserTile: {fileID: 11400000, guid: 2c4188d24d99fd94d83a673517928d7a, type: 2}
+  wieseTile: {fileID: 11400000, guid: f5c0691a402fc4b47be7807abb62d2c9, type: 2}
+  sandTile: {fileID: 11400000, guid: eeee0220658a26a42b38dd6efccb4563, type: 2}
+  gesteinTile: {fileID: 11400000, guid: 860212fbe9533354da4576b544af281d, type: 2}
 --- !u!1 &953309767
 GameObject:
   m_ObjectHideFlags: 0

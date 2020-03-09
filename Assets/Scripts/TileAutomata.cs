@@ -21,9 +21,9 @@ public class TileAutomata : MonoBehaviour
         Gestein,
         Sand
     }
-
-    [Range(0, 100)]
-    public int iniWald;
+    
+    //[Range(0, 100)]
+    //public int iniWald;
 
     [Range(0, 8)]
     public int gebWald;
@@ -31,8 +31,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemWald;
 
-    [Range(0, 100)]
-    public int iniWasser;
+    //[Range(0, 100)]
+    //public int iniWasser;
 
     [Range(0, 8)]
     public int gebWasser;
@@ -40,8 +40,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemWasser;
 
-    [Range(0, 100)]
-    public int iniGestein;
+    //[Range(0, 100)]
+    //public int iniGestein;
 
     [Range(0, 8)]
     public int gebGestein;
@@ -49,14 +49,23 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemGestein;
 
-    [Range(0, 100)]
-    public int iniSand;
+    //[Range(0, 100)]
+    //public int iniSand;
 
     [Range(0, 8)]
     public int gebSand;
 
     [Range(0, 8)]
     public int nemSand;
+
+    //[Range(0, 100)]
+    //public int iniWiese;
+
+    [Range(0, 8)]
+    public int gebWiese;
+
+    [Range(0, 8)]
+    public int nemWiese;
 
     //Anzahl Runden die durchgerechnet werden
     [Range(1, 10)]
@@ -68,14 +77,35 @@ public class TileAutomata : MonoBehaviour
 
     public Tilemap topMap;
     public Tilemap botMap;
-    public IsometricRuleTile waldTile;
-    public IsometricRuleTile wasserTile;
+    public Tile waldTile;
+    public Tile wasserTile;
     public Tile wieseTile;
+    public Tile sandTile;
+    public Tile gesteinTile;
 
     int width;
     int height;
 
     public int GetNem(Terrain terrain)
+    {
+        switch (terrain)
+        {
+            case Terrain.Gestein:
+                return nemGestein;
+            case Terrain.Sand:
+                return nemSand;
+            case Terrain.Wald:
+                return nemWald;
+            case Terrain.Wasser:
+                return nemWasser;
+            case Terrain.Wiese:
+                return nemWiese;
+        }
+
+        throw new System.InvalidOperationException();
+    }
+
+    public int GetGeb(Terrain terrain)
     {
         switch (terrain)
         {
@@ -88,7 +118,7 @@ public class TileAutomata : MonoBehaviour
             case Terrain.Wasser:
                 return gebWasser;
             case Terrain.Wiese:
-                return 0;
+                return gebWiese;
         }
 
         throw new System.InvalidOperationException();
@@ -120,11 +150,22 @@ public class TileAutomata : MonoBehaviour
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
                 }
+                if (terrainMap[x, y].Terrain == Terrain.Sand)
+                {
+                    topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), sandTile);
+                }
+                if (terrainMap[x, y].Terrain == Terrain.Gestein)
+                {
+                    topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), gesteinTile);
+                }
                 if (terrainMap[x, y].Terrain == Terrain.Wasser)
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTile);
                 }
-                botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
+                if (terrainMap[x, y].Terrain == Terrain.Wiese)
+                {
+                    botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
+                }
             }
         }
     }
@@ -195,17 +236,25 @@ public class TileAutomata : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                var randomValue = Random.Range(1, 100);
+                var randomValue = Random.Range(1, 500);
 
-                if (randomValue <= 50)
+                if (randomValue <= 80)
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Wasser };
                 }
-                else if( randomValue <= 80 )
+                else if( randomValue <= 200 )
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Wald };
                 }
-                else
+                else if (randomValue <= 270)
+                {
+                    terrainMap[x, y] = new Feld { Terrain = Terrain.Gestein };
+                }
+                else if (randomValue <= 380)
+                {
+                    terrainMap[x, y] = new Feld { Terrain = Terrain.Sand };
+                }
+                else if (randomValue <= 500)
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Wiese };
                 }
