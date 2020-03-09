@@ -22,8 +22,8 @@ public class TileAutomata : MonoBehaviour
         Sand
     }
     
-    //[Range(0, 100)]
-    //public int iniWald;
+    [Range(0, 100)]
+    public int iniWald;
 
     [Range(0, 8)]
     public int gebWald;
@@ -31,8 +31,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemWald;
 
-    //[Range(0, 100)]
-    //public int iniWasser;
+    [Range(0, 100)]
+    public int iniWasser;
 
     [Range(0, 8)]
     public int gebWasser;
@@ -40,8 +40,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemWasser;
 
-    //[Range(0, 100)]
-    //public int iniGestein;
+    [Range(0, 100)]
+    public int iniGestein;
 
     [Range(0, 8)]
     public int gebGestein;
@@ -49,8 +49,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemGestein;
 
-    //[Range(0, 100)]
-    //public int iniSand;
+    [Range(0, 100)]
+    public int iniSand;
 
     [Range(0, 8)]
     public int gebSand;
@@ -58,8 +58,8 @@ public class TileAutomata : MonoBehaviour
     [Range(0, 8)]
     public int nemSand;
 
-    //[Range(0, 100)]
-    //public int iniWiese;
+    [Range(0, 100)]
+    public int iniWiese;
 
     [Range(0, 8)]
     public int gebWiese;
@@ -236,25 +236,25 @@ public class TileAutomata : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                var randomValue = Random.Range(1, 500);
+                var randomValue = Random.Range(1, (iniWald + iniWasser + iniGestein + iniSand + iniWiese));
 
-                if (randomValue <= 80)
-                {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Wasser };
-                }
-                else if( randomValue <= 200 )
+                if (randomValue <= (iniWald))
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Wald };
                 }
-                else if (randomValue <= 270)
+                else if( randomValue <= (iniWald + iniWasser))
+                {
+                    terrainMap[x, y] = new Feld { Terrain = Terrain.Wasser };
+                }
+                else if (randomValue <= (iniWald + iniWasser + iniGestein))
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Gestein };
                 }
-                else if (randomValue <= 380)
+                else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand))
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Sand };
                 }
-                else if (randomValue <= 500)
+                else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand + iniWiese))
                 {
                     terrainMap[x, y] = new Feld { Terrain = Terrain.Wiese };
                 }

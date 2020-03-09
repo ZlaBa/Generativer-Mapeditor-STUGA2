@@ -575,14 +575,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88af2229f89e024b90480e03d418b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iniWald: 100
   gebWald: 4
   nemWald: 3
+  iniWasser: 100
   gebWasser: 4
   nemWasser: 3
+  iniGestein: 50
   gebGestein: 4
   nemGestein: 3
+  iniSand: 50
   gebSand: 4
   nemSand: 3
+  iniWiese: 100
   gebWiese: 4
   nemWiese: 3
   rechenRunden: 4
