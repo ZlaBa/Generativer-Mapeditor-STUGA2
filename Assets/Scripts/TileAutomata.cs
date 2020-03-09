@@ -19,7 +19,7 @@ public class TileAutomata : MonoBehaviour
         Wasser,
         Wald,
         Gestein,
-        Sand
+        Sand,
     }
     
     [Range(0, 100)]
