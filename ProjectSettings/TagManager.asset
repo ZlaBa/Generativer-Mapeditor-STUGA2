@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unwalkable
   - SlowMap
+  - BadGuys
   layers:
   - Default
   - TransparentFX

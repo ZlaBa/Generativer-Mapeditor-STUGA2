@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 0ada966b83c69ca409e508761f2ce3c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4581886050775374143
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_0
+  - first:
+      213: -9210225174125934571
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_1
+  - first:
+      213: 6377461587670061894
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_2
+  - first:
+      213: 8582853298072448929
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_3
+  - first:
+      213: 2966438453367724628
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_4
+  - first:
+      213: 1186462008675587622
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_5
+  - first:
+      213: 6819371373782690539
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_6
+  - first:
+      213: -4071219188369805710
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_7
+  - first:
+      213: -8736641277240591921
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_8
+  - first:
+      213: -4856268844467731482
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_9
+  - first:
+      213: -8863213697675060934
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_10
+  - first:
+      213: 1751285758193349561
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_11
+  - first:
+      213: -1001968591643922162
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_12
+  - first:
+      213: -6511131623119297646
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_13
+  - first:
+      213: 5915742614304294698
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_14
+  - first:
+      213: 9127538474991181434
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_15
+  - first:
+      213: 7132303629787036037
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_16
+  - first:
+      213: -4095233494251017290
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_17
+  - first:
+      213: 8037631976769580224
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_18
+  - first:
+      213: -6421951262211847399
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_19
+  - first:
+      213: 6925799390939661151
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_20
+  - first:
+      213: 7409544194952637973
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_21
+  - first:
+      213: -209819351992728666
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_22
+  - first:
+      213: -5456820545300113234
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_23
+  - first:
+      213: -3467068749359982944
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_24
+  - first:
+      213: -5087308963928286217
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_25
+  - first:
+      213: 4043935710601158664
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_26
+  - first:
+      213: 7374597843568972057
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_27
+  - first:
+      213: -1593048017416963084
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_28
+  - first:
+      213: -1249750978426871398
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_29
+  - first:
+      213: -1374475686669423127
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_30
+  - first:
+      213: 3403536389796065191
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_31
+  - first:
+      213: -8082570989916092838
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_32
+  - first:
+      213: 2019522510860851906
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_33
+  - first:
+      213: 9074338678049860215
+    second: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 32}
+        - {x: -63, y: 0}
+        - {x: -63, y: 0}
+        - {x: 0, y: -32}
+        - {x: 0, y: -32}
+        - {x: 62, y: -1}
+        - {x: 62, y: 1}
+        - {x: 0, y: 32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c66736a9eed960c0800000000000000
+      internalID: -4581886050775374143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5180dd28005be2080800000000000000
+      internalID: -9210225174125934571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643d5c5568b418850800000000000000
+      internalID: 6377461587670061894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afe5e6c99b6c1770800000000000000
+      internalID: 8582853298072448929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ada057e08ea2920800000000000000
+      internalID: 2966438453367724628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626da9629e8277010800000000000000
+      internalID: 1186462008675587622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beae8c5422643ae50800000000000000
+      internalID: 6819371373782690539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ea67ae7bf1087c0800000000000000
+      internalID: -4071219188369805710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc93f0c0c0731c680800000000000000
+      internalID: -8736641277240591921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e344bf27311b9cb0800000000000000
+      internalID: -4856268844467731482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3993bde91a8ff480800000000000000
+      internalID: -8863213697675060934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 448
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3b05d4e11dd4810800000000000000
+      internalID: 1751285758193349561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0137f2efda4812f0800000000000000
+      internalID: -1001968591643922162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29369264940d3a5a0800000000000000
+      internalID: -6511131623119297646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a278f349090f81250800000000000000
+      internalID: 5915742614304294698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_15
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 384
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e5f8b12e78bae70800000000000000
+      internalID: 9127538474991181434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5897fabdc580bf260800000000000000
+      internalID: 7132303629787036037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe2ee95deca27c0800000000000000
+      internalID: -4095233494251017290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 320
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccebaa92b76b8f60800000000000000
+      internalID: 8037631976769580224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 320
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bcdfa1a55a0e6a0800000000000000
+      internalID: -6421951262211847399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5343920ad16d1060800000000000000
+      internalID: 6925799390939661151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ea5b7103df3d660800000000000000
+      internalID: 7409544194952637973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_22
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a388793962961df0800000000000000
+      internalID: -209819351992728666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_23
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8555220aa7544b0800000000000000
+      internalID: -5456820545300113234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_24
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 256
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a65a8e775f72efc0800000000000000
+      internalID: -3467068749359982944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbd466737f3669b0800000000000000
+      internalID: -5087308963928286217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_26
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80026e46a12fe1830800000000000000
+      internalID: 4043935710601158664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_27
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 192
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9115a4b9aa5d75660800000000000000
+      internalID: 7374597843568972057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_28
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 192
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbb8bbb44b54e9e0800000000000000
+      internalID: -1593048017416963084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a916b294b1ef7aee0800000000000000
+      internalID: -1249750978426871398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_30
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed68af25a1ecece0800000000000000
+      internalID: -1374475686669423127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_31
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7afe8e5505acb3f20800000000000000
+      internalID: 3403536389796065191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a568c2a0280f4df80800000000000000
+      internalID: -8082570989916092838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_33
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 64
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca14c31609c60c10800000000000000
+      internalID: 2019522510860851906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Tilemap_for_ruled_Tiles_Wiese-Wasser_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77aefb423f68eed70800000000000000
+      internalID: 9074338678049860215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
