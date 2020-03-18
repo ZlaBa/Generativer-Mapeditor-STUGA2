@@ -75,10 +75,12 @@ public class TileAutomata : MonoBehaviour
     private Feld[,] terrainMap; //Store Terrain Tiles, 0 für tot, 1 für lebendig
     public Vector3Int kartenMasse; //Kartengrösse
 
+    public Tilemap ObjectMap;
     public Tilemap UnwalkableMap;
     public Tilemap topMap;
     public Tilemap botMap;
     public Tile waldTile;
+    public Tile treeTile;
     public Tile wasserTile;
     public Tile wieseTile;
     public Tile sandTile;
@@ -150,6 +152,7 @@ public class TileAutomata : MonoBehaviour
                 if (terrainMap[x, y].Terrain == Terrain.Wald)
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
+                    ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), treeTile);
                 }
                 if (terrainMap[x, y].Terrain == Terrain.Sand)
                 {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
-    //Foodprefab in Tutorial
+    //Foodprefab in Tutorial - Zu spawnendes Objekt
     public GameObject TreePrefab;
 
     public Vector3 center;
