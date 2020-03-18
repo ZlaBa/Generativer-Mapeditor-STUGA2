@@ -14,12 +14,12 @@ public class SpawnObjects : MonoBehaviour
 
     void Start()
     {
-        SpawnTree();
+        //SpawnTree();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKeyUp(KeyCode.T))
             SpawnTree();
     }
     //SpawnFood in Tutorial
