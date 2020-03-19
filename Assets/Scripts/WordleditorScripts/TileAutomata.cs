@@ -3,25 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;
+using Assets;
 
 public class TileAutomata : MonoBehaviour
 {
-    public class Feld
-    {
-        public Terrain Terrain { get; set; }
-        public int Einheiten { get; set; }
-        public double Wachstumsfaktor { get; set; }
-    }
-
-    public enum Terrain
-    {
-        Wiese,
-        Wasser,
-        Wald,
-        Gestein,
-        Sand,
-    }
-    
     [Range(0, 100)]
     public int iniWald;
 
@@ -72,7 +57,6 @@ public class TileAutomata : MonoBehaviour
     public int rechenRunden;
     private int count = 0; //für gespeicherte Files
 
-    private Feld[,] terrainMap; //Store Terrain Tiles, 0 für tot, 1 für lebendig
     public Vector3Int kartenMasse; //Kartengrösse
 
     public Tilemap ObjectMap;
@@ -86,41 +70,43 @@ public class TileAutomata : MonoBehaviour
     public Tile sandTile;
     public Tile gesteinTile;
 
+    private GameData gameData;
+
     int width;
     int height;
-
-    public int GetNem(Terrain terrain)
+    
+    public int GetNem(FeldTerrain terrain)
     {
         switch (terrain)
         {
-            case Terrain.Gestein:
+            case FeldTerrain.Gestein:
                 return nemGestein;
-            case Terrain.Sand:
+            case FeldTerrain.Sand:
                 return nemSand;
-            case Terrain.Wald:
+            case FeldTerrain.Wald:
                 return nemWald;
-            case Terrain.Wasser:
+            case FeldTerrain.Wasser:
                 return nemWasser;
-            case Terrain.Wiese:
+            case FeldTerrain.Wiese:
                 return nemWiese;
         }
 
         throw new System.InvalidOperationException();
     }
 
-    public int GetGeb(Terrain terrain)
+    public int GetGeb(FeldTerrain terrain)
     {
         switch (terrain)
         {
-            case Terrain.Gestein:
+            case FeldTerrain.Gestein:
                 return gebGestein;
-            case Terrain.Sand:
+            case FeldTerrain.Sand:
                 return gebSand;
-            case Terrain.Wald:
+            case FeldTerrain.Wald:
                 return gebWald;
-            case Terrain.Wasser:
+            case FeldTerrain.Wasser:
                 return gebWasser;
-            case Terrain.Wiese:
+            case FeldTerrain.Wiese:
                 return gebWiese;
         }
 
@@ -134,39 +120,44 @@ public class TileAutomata : MonoBehaviour
         width = kartenMasse.x;
         height = kartenMasse.y;
 
-        if (terrainMap == null)
+        gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
+
+        if (!gameData.IsGenerated())
         {
-            terrainMap = new Feld[width, height];
+            gameData.Init(width, height);
             initPos();
         }
 
         for (int i = 0; i < rechenRunden; i++)
         {
-            terrainMap = genTilePos(terrainMap);
+            var newFelder = genTilePos(gameData.GetFelder());
+            gameData.ReplaceFelder(newFelder);
         }
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                if (terrainMap[x, y].Terrain == Terrain.Wald)
+                var feld = gameData.GetFeld(x, y);
+
+                if (feld.Terrain == FeldTerrain.Wald)
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
-                    ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), treeTile);
+                    //ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), treeTile);
                 }
-                if (terrainMap[x, y].Terrain == Terrain.Sand)
+                if (feld.Terrain == FeldTerrain.Sand)
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), sandTile);
                 }
-                if (terrainMap[x, y].Terrain == Terrain.Gestein)
+                if (feld.Terrain == FeldTerrain.Gestein)
                 {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), gesteinTile);
                 }
-                if (terrainMap[x, y].Terrain == Terrain.Wasser)
+                if (feld.Terrain == FeldTerrain.Wasser)
                 {
                     UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTile);
                 }
-                if (terrainMap[x, y].Terrain == Terrain.Wiese)
+                if (feld.Terrain == FeldTerrain.Wiese)
                 {
                     botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
                 }
@@ -183,12 +174,12 @@ public class TileAutomata : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                Dictionary<Terrain, int> neighbors = new Dictionary<Terrain, int>();
-                neighbors.Add(Terrain.Gestein, 0);
-                neighbors.Add(Terrain.Sand, 0);
-                neighbors.Add(Terrain.Wald, 0);
-                neighbors.Add(Terrain.Wasser, 0);
-                neighbors.Add(Terrain.Wiese, 0);
+                Dictionary<FeldTerrain, int> neighbors = new Dictionary<FeldTerrain, int>();
+                neighbors.Add(FeldTerrain.Gestein, 0);
+                neighbors.Add(FeldTerrain.Sand, 0);
+                neighbors.Add(FeldTerrain.Wald, 0);
+                neighbors.Add(FeldTerrain.Wasser, 0);
+                neighbors.Add(FeldTerrain.Wiese, 0);
 
                 foreach (var b in myB.allPositionsWithin)
                 {
@@ -216,9 +207,9 @@ public class TileAutomata : MonoBehaviour
         return newMap;
     }
 
-    private Terrain getNewTerrain(Dictionary<Terrain, int> neighbors)
+    private FeldTerrain getNewTerrain(Dictionary<FeldTerrain, int> neighbors)
     {
-        var terrain = Terrain.Wiese;
+        var terrain = FeldTerrain.Wiese;
         var terrainCount = 0;
 
         foreach( var key in neighbors.Keys )
@@ -244,23 +235,28 @@ public class TileAutomata : MonoBehaviour
 
                 if (randomValue <= (iniWald))
                 {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Wald };
+                    var feld = new Feld { Terrain = FeldTerrain.Wald };
+                    gameData.SetFeld(feld, x, y);
                 }
                 else if( randomValue <= (iniWald + iniWasser))
                 {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Wasser };
+                    var feld = new Feld { Terrain = FeldTerrain.Wasser };
+                    gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein))
                 {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Gestein };
+                    var feld = new Feld { Terrain = FeldTerrain.Gestein };
+                    gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand))
                 {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Sand };
+                    var feld = new Feld { Terrain = FeldTerrain.Sand };
+                    gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand + iniWiese))
                 {
-                    terrainMap[x, y] = new Feld { Terrain = Terrain.Wiese };
+                    var feld = new Feld { Terrain = FeldTerrain.Wiese };
+                    gameData.SetFeld(feld, x, y);
                 }
             }
         }
@@ -312,7 +308,7 @@ public class TileAutomata : MonoBehaviour
 
         if (complete)
         {
-            terrainMap = null;
+            gameData.ResetGame();
         }
     }
 }

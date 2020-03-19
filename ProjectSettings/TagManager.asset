@@ -8,6 +8,7 @@ TagManager:
   - SlowMap
   - BadGuys
   - Baum
+  - GameData
   layers:
   - Default
   - TransparentFX
