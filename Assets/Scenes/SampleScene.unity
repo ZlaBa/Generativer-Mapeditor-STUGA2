@@ -227,8 +227,8 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 3
-  m_Mode: 0
+  m_SortOrder: 2
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &25718649
@@ -458,8 +458,8 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 3
-  m_Mode: 0
+  m_SortOrder: 2
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &112323385
@@ -9071,6 +9071,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9086,6 +9087,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac25bdbd730b7ac47bdea45744f1e3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraMovement: {fileID: 1576227463}
+  dampTime: 0.4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -9113,7 +9128,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9266,7 +9281,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 3
+  m_SortOrder: 2
   m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -9396,23 +9411,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88af2229f89e024b90480e03d418b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iniWald: 100
+  iniWald: 75
   gebWald: 4
   nemWald: 3
-  iniWasser: 100
+  iniWasser: 60
   gebWasser: 4
   nemWasser: 3
-  iniGestein: 100
+  iniGestein: 50
   gebGestein: 4
   nemGestein: 3
-  iniSand: 100
+  iniSand: 50
   gebSand: 4
   nemSand: 3
   iniWiese: 100
   gebWiese: 4
   nemWiese: 3
   rechenRunden: 1
-  kartenMasse: {x: 32, y: 32, z: 0}
+  kartenMasse: {x: 64, y: 64, z: 0}
   ObjectMap: {fileID: 25718649}
   UnwalkableMap: {fileID: 837512646}
   topMap: {fileID: 696747320}
@@ -9515,8 +9530,8 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 3
-  m_Mode: 0
+  m_SortOrder: 2
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &837512646
@@ -10273,7 +10288,7 @@ Tilemap:
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: c61452cf435dea344bef762f3b91e8b1, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 9cf7cb718a29a7947919019775142141, type: 2}
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 0ab4120d111c8ed4ab478fba336715a8, type: 3}
@@ -10419,7 +10434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f8b547777f819c14398194d0afc4e948, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14567,7 +14582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1576227462
 Rigidbody2D:
   serializedVersion: 4
