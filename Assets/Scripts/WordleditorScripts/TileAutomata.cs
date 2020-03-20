@@ -55,7 +55,7 @@ public class TileAutomata : MonoBehaviour
     //Anzahl Runden die durchgerechnet werden
     [Range(1, 10)]
     public int rechenRunden;
-    private int count = 0; //für gespeicherte Files
+    //private int count = 0; //für gespeicherte Files
 
     public Vector3Int kartenMasse; //Kartengrösse
 
@@ -63,18 +63,18 @@ public class TileAutomata : MonoBehaviour
     public Tilemap UnwalkableMap;
     public Tilemap topMap;
     public Tilemap botMap;
+    public UnitTile waldTrees;
     public Tile waldTile;
-    public Tile treeTile;
     public Tile wasserTile;
     public Tile wieseTile;
     public Tile sandTile;
     public Tile gesteinTile;
 
-    private GameData gameData;
+    private GameData _gameData;
 
     int width;
     int height;
-    
+
     public int GetNem(FeldTerrain terrain)
     {
         switch (terrain)
@@ -116,34 +116,38 @@ public class TileAutomata : MonoBehaviour
     //Hauptfunktion
     public void doSim(int rechenRunden)
     {
-        clearMap(false);
+        ClearMap(false);
         width = kartenMasse.x;
         height = kartenMasse.y;
 
-        gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
+        _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
 
-        if (!gameData.IsGenerated())
+        if (!_gameData.IsGenerated())
         {
-            gameData.Init(width, height);
+            _gameData.Init(width, height);
             initPos();
         }
 
         for (int i = 0; i < rechenRunden; i++)
         {
-            var newFelder = genTilePos(gameData.GetFelder());
-            gameData.ReplaceFelder(newFelder);
+            var newFelder = genTilePos(_gameData.GetFelder());
+            _gameData.ReplaceFelder(newFelder);
         }
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                var feld = gameData.GetFeld(x, y);
+                var feld = _gameData.GetFeld(x, y);
+                var neighborCount = CountNeighbors(_gameData.GetFelder(), x, y);
 
                 if (feld.Terrain == FeldTerrain.Wald)
                 {
+                    // Konfiguration des hinzuzufügenden Tiles
+                    waldTrees.Units = CalculateUnits(neighborCount[FeldTerrain.Wald], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum); //waldTrees.Sprites.Length
+
+                    ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTrees);
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
-                    //ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), treeTile);
                 }
                 if (feld.Terrain == FeldTerrain.Sand)
                 {
@@ -165,36 +169,86 @@ public class TileAutomata : MonoBehaviour
         }
     }
 
+    /*private int CalculateUnits(int neighborCount, int min, int max, int anzahlSprites)
+    {
+        var step = 8 / anzahlSprites;
+        var currentStep = step;
+        var stepCount = 0;
+        var unitStep = (max - min) / anzahlSprites;
+
+        while(currentStep <= 8)
+        {
+            if( neighborCount <= currentStep)
+            {
+                var value = Random.Range(stepCount * unitStep, (stepCount + 1) * unitStep);
+                Debug.Log("neighborCount: " + neighborCount + ", value: " + value);
+                return value;
+            }
+
+            stepCount++;
+            currentStep += step;
+        }
+
+        throw new System.InvalidOperationException("Nicht gut.");
+    }*/
+
+
+    private int CalculateUnits(int neighborCount, int min, int max)
+    {
+        switch (neighborCount)
+        {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                return Random.Range(min, max / 4);
+            case 4:
+            case 5:
+                return Random.Range(max / 4, max / 4 * 2);
+            case 6:
+            case 7:
+                return Random.Range(max / 4 * 2, max / 4 * 3);
+            case 8:
+                return Random.Range(max / 4 * 3, max);
+        }
+
+        throw new System.InvalidOperationException("Nicht gut.");
+    }
+
+    /*private int CalculateUnits(int neighborCount, int min, int max)
+    {
+        switch (neighborCount)
+        {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                return Random.Range(min, max / 3);
+            case 4:
+            case 5:
+            case 6:
+                return Random.Range(max / 3, max / 3 * 2);
+            case 7:
+            case 8:
+                return Random.Range(max / 3 * 2, max);
+        }
+
+        throw new System.InvalidOperationException("Nicht gut.");
+    }*/
+
     public Feld[,] genTilePos(Feld[,] oldMap)
     {
         Feld[,] newMap = new Feld[width, height];
-        BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                Dictionary<FeldTerrain, int> neighbors = new Dictionary<FeldTerrain, int>();
-                neighbors.Add(FeldTerrain.Gestein, 0);
-                neighbors.Add(FeldTerrain.Sand, 0);
-                neighbors.Add(FeldTerrain.Wald, 0);
-                neighbors.Add(FeldTerrain.Wasser, 0);
-                neighbors.Add(FeldTerrain.Wiese, 0);
+                Dictionary<FeldTerrain, int> neighbors = CountNeighbors(oldMap, x, y);
 
-                foreach (var b in myB.allPositionsWithin)
-                {
-                    if (b.x == 0 && b.y == 0)
-                        continue;
-                    if (x + b.x >= 0 && x + b.x < width && y + b.y >= 0 && y + b.y < height)
-                    {
-                        var terrainAtField = oldMap[x + b.x, y + b.y].Terrain;
-                        neighbors[terrainAtField] = neighbors[terrainAtField] + 1;
-                    }
-                }
-
-                var oldTerrain = oldMap[x, y].Terrain; //Wiese
-                var nemTerrain = GetNem(oldTerrain); //4
-                if (neighbors[oldTerrain] < nemTerrain) // 5 
+                var oldTerrain = oldMap[x, y].Terrain;
+                var nemTerrain = GetNem(oldTerrain);
+                if (neighbors[oldTerrain] < nemTerrain)
                 {
                     newMap[x, y] = new Feld { Terrain = getNewTerrain(neighbors) };
                 }
@@ -207,15 +261,40 @@ public class TileAutomata : MonoBehaviour
         return newMap;
     }
 
+    private Dictionary<FeldTerrain, int> CountNeighbors(Feld[,] oldMap, int x, int y)
+    {
+        BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
+
+        Dictionary<FeldTerrain, int> neighbors = new Dictionary<FeldTerrain, int>();
+        neighbors.Add(FeldTerrain.Gestein, 0);
+        neighbors.Add(FeldTerrain.Sand, 0);
+        neighbors.Add(FeldTerrain.Wald, 0);
+        neighbors.Add(FeldTerrain.Wasser, 0);
+        neighbors.Add(FeldTerrain.Wiese, 0);
+
+        foreach (var b in myB.allPositionsWithin)
+        {
+            if (b.x == 0 && b.y == 0)
+                continue;
+            if (x + b.x >= 0 && x + b.x < width && y + b.y >= 0 && y + b.y < height)
+            {
+                var terrainAtField = oldMap[x + b.x, y + b.y].Terrain;
+                neighbors[terrainAtField] = neighbors[terrainAtField] + 1;
+            }
+        }
+
+        return neighbors;
+    }
+
     private FeldTerrain getNewTerrain(Dictionary<FeldTerrain, int> neighbors)
     {
         var terrain = FeldTerrain.Wiese;
         var terrainCount = 0;
 
-        foreach( var key in neighbors.Keys )
+        foreach (var key in neighbors.Keys)
         {
             var neighborCount = neighbors[key];
-            if( neighborCount > terrainCount)
+            if (neighborCount > terrainCount)
             {
                 terrain = key;
                 terrainCount = neighborCount;
@@ -236,27 +315,27 @@ public class TileAutomata : MonoBehaviour
                 if (randomValue <= (iniWald))
                 {
                     var feld = new Feld { Terrain = FeldTerrain.Wald };
-                    gameData.SetFeld(feld, x, y);
+                    _gameData.SetFeld(feld, x, y);
                 }
-                else if( randomValue <= (iniWald + iniWasser))
+                else if (randomValue <= (iniWald + iniWasser))
                 {
                     var feld = new Feld { Terrain = FeldTerrain.Wasser };
-                    gameData.SetFeld(feld, x, y);
+                    _gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein))
                 {
                     var feld = new Feld { Terrain = FeldTerrain.Gestein };
-                    gameData.SetFeld(feld, x, y);
+                    _gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand))
                 {
                     var feld = new Feld { Terrain = FeldTerrain.Sand };
-                    gameData.SetFeld(feld, x, y);
+                    _gameData.SetFeld(feld, x, y);
                 }
                 else if (randomValue <= (iniWald + iniWasser + iniGestein + iniSand + iniWiese))
                 {
                     var feld = new Feld { Terrain = FeldTerrain.Wiese };
-                    gameData.SetFeld(feld, x, y);
+                    _gameData.SetFeld(feld, x, y);
                 }
             }
         }
@@ -272,43 +351,46 @@ public class TileAutomata : MonoBehaviour
         // Befehl zur Löschung
         if (Input.GetMouseButtonDown(1))
         {
-            clearMap(true);
-        }
-        // Befehl zum Speichern
-        if (Input.GetMouseButton(2))
-        {
-            SaveAssetMap();
+            ClearMap(true);
         }
     }
-    // Karte als Asset speichern
-    public void SaveAssetMap()
+    // Befehl zum Speichern
+    /*if (Input.GetMouseButton(2))
     {
-        string saveName = "tmapXY_" + count;
-        var mf = GameObject.Find("Grid");
+        SaveAssetMap();
+    }
+}
+// Karte als Asset speichern
+public void SaveAssetMap()
+{
+    string saveName = "tmapXY_" + count;
+    var mf = GameObject.Find("Grid");
 
-        if (mf)
+    if (mf)
+    {
+        var savePath = "assets/" + saveName + ".prefab";
+        if (PrefabUtility.CreatePrefab(savePath, mf))
         {
-            var savePath = "assets/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath, mf))
-            {
-                EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under " + savePath, "Continue");
-            }
-            else
-            {
-                EditorUtility.DisplayDialog("Tilemap NOT saved", "An Error occured while trying to save the Tilemap under " + savePath, "Continue");
-            }
+            EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under " + savePath, "Continue");
+        }
+        else
+        {
+            EditorUtility.DisplayDialog("Tilemap NOT saved", "An Error occured while trying to save the Tilemap under " + savePath, "Continue");
         }
     }
+}*/
 
-    public void clearMap(bool complete)
+    public void ClearMap(bool complete)
     {
+        _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
+        ObjectMap.ClearAllTiles();
         UnwalkableMap.ClearAllTiles();
         topMap.ClearAllTiles();
         botMap.ClearAllTiles();
 
         if (complete)
         {
-            gameData.ResetGame();
+            _gameData.ResetGame();
         }
     }
 }

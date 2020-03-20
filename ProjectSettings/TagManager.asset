@@ -9,6 +9,7 @@ TagManager:
   - BadGuys
   - Baum
   - GameData
+  - TreeSpawner
   layers:
   - Default
   - TransparentFX

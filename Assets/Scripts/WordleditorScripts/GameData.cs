@@ -10,7 +10,7 @@ public class GameData : MonoBehaviour
 
     public void Start()
     {
-        int a = 2;
+
     }
 
     public void Init(int width, int height)

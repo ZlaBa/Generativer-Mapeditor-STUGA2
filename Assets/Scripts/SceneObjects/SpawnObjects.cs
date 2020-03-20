@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
+    GameData gameData;
     //Foodprefab in Tutorial - Zu spawnendes Objekt
     public GameObject TreePrefab;
 
@@ -14,18 +15,17 @@ public class SpawnObjects : MonoBehaviour
 
     void Start()
     {
-        //SpawnTree();
+        gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.T))
-            SpawnTree();
+        SpawnTree();
     }
     //SpawnFood in Tutorial
     public void SpawnTree()
-    {
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+    {//(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2)
+        Vector3 pos = center;
         Instantiate(TreePrefab, pos, Quaternion.identity);
     }
 

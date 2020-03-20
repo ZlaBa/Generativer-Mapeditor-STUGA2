@@ -150,7 +150,7 @@ Transform:
   m_Children:
   - {fileID: 1314222926}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25718646
 GameObject:
@@ -377,8 +377,8 @@ MonoBehaviour:
   UnwalkableMap: {fileID: 837512646}
   topMap: {fileID: 696747320}
   botMap: {fileID: 112323385}
-  waldTile: {fileID: 11400000, guid: 785d1f4734895b04e85038acc4b10701, type: 2}
-  treeTile: {fileID: 0}
+  waldTrees: {fileID: 0}
+  waldTile: {fileID: 0}
   wasserTile: {fileID: 11400000, guid: 2c4188d24d99fd94d83a673517928d7a, type: 2}
   wieseTile: {fileID: 11400000, guid: 0b143cac28a50034b90e9aacb9b7f5c2, type: 2}
   sandTile: {fileID: 11400000, guid: eeee0220658a26a42b38dd6efccb4563, type: 2}
@@ -475,6 +475,8 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -510,7 +512,7 @@ Tilemap:
       e02: 1
       e03: NaN
       e10: NaN
-      e11: 7.02e-43
+      e11: 9.32e-43
       e12: 0
       e13: NaN
       e20: 0
@@ -523,8 +525,7 @@ Tilemap:
       e33: 0
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 0.0000000014371331, g: 0.0000000014371331, b: 0.0000000014371331,
-      a: 0.0000000014371331}
+    m_Data: {r: 5.4967804, g: 5.4967804, b: 5.4967804, a: 5.4967804}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9168,7 +9169,7 @@ Grid:
   m_GameObject: {fileID: 522833236}
   m_Enabled: 1
   m_CellSize: {x: 1, y: 0.5, z: 1}
-  m_CellGap: {x: 0.1, y: 0.05, z: 0.1}
+  m_CellGap: {x: 0.1, y: 0.05, z: 0}
   m_CellLayout: 3
   m_CellSwizzle: 0
 --- !u!4 &522833238
@@ -9188,38 +9189,7 @@ Transform:
   - {fileID: 112323383}
   - {fileID: 246310545}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &655233250
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 655233251}
-  m_Layer: 0
-  m_Name: SpawnTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &655233251
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655233250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32335, y: -0.24175078, z: -7.1970487}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1825737649}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696747317
 GameObject:
@@ -9412,7 +9382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &796865909
 MonoBehaviour:
@@ -9441,14 +9411,14 @@ MonoBehaviour:
   iniWiese: 100
   gebWiese: 4
   nemWiese: 3
-  rechenRunden: 4
+  rechenRunden: 1
   kartenMasse: {x: 32, y: 32, z: 0}
   ObjectMap: {fileID: 25718649}
   UnwalkableMap: {fileID: 837512646}
   topMap: {fileID: 696747320}
   botMap: {fileID: 112323385}
+  waldTrees: {fileID: 11400000, guid: f02e4e0aad8b9d143a0b9d42d2f144d8, type: 2}
   waldTile: {fileID: 11400000, guid: a9159620745715740a719716e1f6f9e8, type: 2}
-  treeTile: {fileID: 11400000, guid: c4d1844be49714a4aa2d0b93bd3e89b3, type: 2}
   wasserTile: {fileID: 11400000, guid: e1ed6426f006bf84696c880f06c36a04, type: 2}
   wieseTile: {fileID: 11400000, guid: 0b143cac28a50034b90e9aacb9b7f5c2, type: 2}
   sandTile: {fileID: 11400000, guid: fa797a9dbbf19834b96ed51bc6dc7ec5, type: 2}
@@ -9612,100 +9582,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &927183943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 927183946}
-  - component: {fileID: 927183945}
-  - component: {fileID: 927183944}
-  m_Layer: 0
-  m_Name: Baum
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &927183944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927183943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9930b13d9b2f88943a84d879a1c9af72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &927183945
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927183943}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 920c69c9662a27143b0562575a363231, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.96, y: 1.6}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &927183946
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927183943}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305396203
 GameObject:
   m_ObjectHideFlags: 0
@@ -14772,56 +14648,8 @@ Transform:
   - {fileID: 2079063444}
   - {fileID: 736987574}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1825737648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1825737649}
-  - component: {fileID: 1825737650}
-  m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1825737649
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825737648}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.32335, y: -0.7582492, z: 6.1970487}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 655233251}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825737650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825737648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87880f175c41ea24f92137a5b5982dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TreePrefab: {fileID: 1565154291624667957, guid: c6aa83a28f4e44c4a8995302bbc5e303,
-    type: 3}
-  center: {x: 0.5, y: 1, z: 0}
-  size: {x: 0.5, y: 0.25, z: 0}
-  min: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1966632081
 GameObject:
   m_ObjectHideFlags: 0
