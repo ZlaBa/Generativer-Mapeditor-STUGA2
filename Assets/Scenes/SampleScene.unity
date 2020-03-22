@@ -222,7 +222,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -379,7 +379,7 @@ MonoBehaviour:
   botMap: {fileID: 112323385}
   waldTrees: {fileID: 0}
   waldTile: {fileID: 0}
-  wasserTile: {fileID: 11400000, guid: 2c4188d24d99fd94d83a673517928d7a, type: 2}
+  wasserTiefe: {fileID: 0}
   wieseTile: {fileID: 11400000, guid: 0b143cac28a50034b90e9aacb9b7f5c2, type: 2}
   sandTile: {fileID: 11400000, guid: eeee0220658a26a42b38dd6efccb4563, type: 2}
   gesteinTile: {fileID: 11400000, guid: 860212fbe9533354da4576b544af281d, type: 2}
@@ -9414,7 +9414,7 @@ MonoBehaviour:
   iniWald: 75
   gebWald: 4
   nemWald: 3
-  iniWasser: 60
+  iniWasser: 100
   gebWasser: 4
   nemWasser: 3
   iniGestein: 50
@@ -9426,7 +9426,7 @@ MonoBehaviour:
   iniWiese: 100
   gebWiese: 4
   nemWiese: 3
-  rechenRunden: 1
+  rechenRunden: 4
   kartenMasse: {x: 64, y: 64, z: 0}
   ObjectMap: {fileID: 25718649}
   UnwalkableMap: {fileID: 837512646}
@@ -9434,7 +9434,7 @@ MonoBehaviour:
   botMap: {fileID: 112323385}
   waldTrees: {fileID: 11400000, guid: f02e4e0aad8b9d143a0b9d42d2f144d8, type: 2}
   waldTile: {fileID: 11400000, guid: a9159620745715740a719716e1f6f9e8, type: 2}
-  wasserTile: {fileID: 11400000, guid: e1ed6426f006bf84696c880f06c36a04, type: 2}
+  wasserTiefe: {fileID: 11400000, guid: e2607cdd7f443444cb4a4b0daf197b82, type: 2}
   wieseTile: {fileID: 11400000, guid: 0b143cac28a50034b90e9aacb9b7f5c2, type: 2}
   sandTile: {fileID: 11400000, guid: fa797a9dbbf19834b96ed51bc6dc7ec5, type: 2}
   gesteinTile: {fileID: 11400000, guid: a4231bfd48bf2214ba939c77941e323b, type: 2}
@@ -9485,7 +9485,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 10000
   m_ExtrusionFactor: 0.00001
 --- !u!483693784 &837512645
 TilemapRenderer:
@@ -9525,7 +9525,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -10434,7 +10434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f8b547777f819c14398194d0afc4e948, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14631,7 +14631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e20ea88925981946b9aeb37652831aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!1 &1682604599
 GameObject:
   m_ObjectHideFlags: 0

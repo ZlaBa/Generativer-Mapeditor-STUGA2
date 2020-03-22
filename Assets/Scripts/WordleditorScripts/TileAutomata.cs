@@ -65,7 +65,7 @@ public class TileAutomata : MonoBehaviour
     public Tilemap botMap;
     public UnitTile waldTrees;
     public Tile waldTile;
-    public Tile wasserTile;
+    public UnitTile wasserTiefe;
     public Tile wieseTile;
     public Tile sandTile;
     public Tile gesteinTile;
@@ -159,7 +159,8 @@ public class TileAutomata : MonoBehaviour
                 }
                 if (feld.Terrain == FeldTerrain.Wasser)
                 {
-                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTile);
+                    wasserTiefe.Units = CalculateUnits(neighborCount[FeldTerrain.Wasser], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum);
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
                 }
                 if (feld.Terrain == FeldTerrain.Wiese)
                 {
@@ -201,15 +202,15 @@ public class TileAutomata : MonoBehaviour
             case 1:
             case 2:
             case 3:
-                return Random.Range(min, max / 4);
+                return Random.Range(min, max / 4);//250
             case 4:
             case 5:
-                return Random.Range(max / 4, max / 4 * 2);
+                return Random.Range(max / 4, max / 4 * 2);//500
             case 6:
             case 7:
-                return Random.Range(max / 4 * 2, max / 4 * 3);
+                return Random.Range(max / 4 * 2, max / 4 * 3);//750
             case 8:
-                return Random.Range(max / 4 * 3, max);
+                return Random.Range(max / 4 * 3, max);//1000
         }
 
         throw new System.InvalidOperationException("Nicht gut.");
@@ -340,7 +341,10 @@ public class TileAutomata : MonoBehaviour
             }
         }
     }
-
+    private void Start()
+    {
+        doSim(rechenRunden);
+    }
     // Update is called once per frame
     void Update()
     {   // Befehl zum Start
