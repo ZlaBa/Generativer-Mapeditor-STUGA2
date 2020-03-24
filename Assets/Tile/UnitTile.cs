@@ -38,7 +38,7 @@ public class UnitTile : Tile
 #if UNITY_EDITOR
     // The following is a helper that adds a menu item to create a RoadTile Asset
     [MenuItem("Assets/Create/Tiles/Unit Tile")]
-    public static void CreateWoodTile()
+    public static void CreateUnitTile()
     {
         string path = EditorUtility.SaveFilePanelInProject("Save Unit Tile", "New Unit Tile", "Asset", "Save Unit Tile", "Assets");
         if (path == "")

@@ -66,7 +66,8 @@ public class TileAutomata : MonoBehaviour
     public UnitTile waldTrees;
     public Tile waldTile;
     public UnitTile wasserTiefe;
-    public Tile wieseTile;
+    public Tile wasserTile;
+    public SpawnUnitTile wieseTile;
     public Tile sandTile;
     public Tile gesteinTile;
 
@@ -147,7 +148,7 @@ public class TileAutomata : MonoBehaviour
                     waldTrees.Units = CalculateUnits(neighborCount[FeldTerrain.Wald], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum); //waldTrees.Sprites.Length
 
                     ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTrees);
-                    topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
                 }
                 if (feld.Terrain == FeldTerrain.Sand)
                 {
@@ -160,16 +161,19 @@ public class TileAutomata : MonoBehaviour
                 if (feld.Terrain == FeldTerrain.Wasser)
                 {
                     wasserTiefe.Units = CalculateUnits(neighborCount[FeldTerrain.Wasser], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum);
-                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
+                    ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTile);
                 }
                 if (feld.Terrain == FeldTerrain.Wiese)
                 {
+                    wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitGenerationMinimum, wieseTile.UnitGenerationMaximum);
                     botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
+                    wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitSpawnMinimum, wieseTile.UnitSpawnMaximum);
                 }
             }
         }
     }
-
+    
     /*private int CalculateUnits(int neighborCount, int min, int max, int anzahlSprites)
     {
         var step = 8 / anzahlSprites;
