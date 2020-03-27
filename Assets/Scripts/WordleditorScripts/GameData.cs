@@ -7,11 +7,7 @@ public class GameData : MonoBehaviour
     private bool _isGenerated;
     private int _width;
     private int _height;
-
-    public void Start()
-    {
-
-    }
+    private object CMDebug;
 
     public void Init(int width, int height)
     {

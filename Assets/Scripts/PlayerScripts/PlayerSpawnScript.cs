@@ -1,22 +1,51 @@
-﻿using System.Collections;
+﻿using Assets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerSpawnScript : MonoBehaviour
 {
     Rigidbody2D rb2D;
 
+    public Grid grid;
+    public Tilemap IsoGroundMap;
     public Transform spawnPos;
     public GameObject Player;
-
-    void SpawnPlayer()
-    {
-        Instantiate(Player, spawnPos.position, spawnPos.rotation);
-    }
+    private GameData _gameData;
 
     private void Start()
     {
-        SpawnPlayer();
+        _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
+
+        for (int x=0; x < _gameData.GetWidth(); x++)
+        {
+            for( int y=0; y < _gameData.GetHeight(); y++)
+            {
+                var feld = _gameData.GetFeld(x, y);
+                Debug.Log(_gameData.GetFeld(x, y));
+                if ( feld.Terrain == FeldTerrain.Wiese )
+                {
+                    Player.layer = 2;
+                    /*
+                    GridLayout gridLayout = transform.parent.GetComponentInParent<GridLayout>();
+                    Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
+                    transform.position = gridLayout.CellToWorld(cellPosition);
+                    */
+                    //int feldKoordinate = int.Parse(feld.ToString());
+                    Instantiate(Player, new Vector3(IsoGroundMap.origin.x, IsoGroundMap.origin.y), spawnPos.rotation);
+                    //Instantiate(Player, new Vector3(IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y), spawnPos.rotation);
+                    //Instantiate(Player, new Vector3Int(cellPosition.x, cellPosition.y, z: 0), spawnPos.rotation);
+                    //Instantiate(Player, new Vector3Int((IsoGroundMap.origin.x, IsoGroundMap.origin.y), (IsoGroundMap.origin.x, IsoGroundMap.origin.y));
+                    //Debug.Log("X: " + (IsoGroundMap.origin.x) + " Y: " + (IsoGroundMap.origin.y));
+                    //Debug.Log("Player was spawned at" + (IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y) + "!");
+                    Debug.Log("Player was spawned at" + (IsoGroundMap.origin.x, IsoGroundMap.origin.y) + "!");
+                    //Debug.Log("Player was spawned at cellPosition.x: " + (cellPosition.x) + " cellPosition.y: " + (cellPosition.y) + " spawnPos.rotation: " + (spawnPos.rotation) + "!");
+                    //Debug.Log("Mission Complete!");
+                    return;
+                }
+            }
+        }
     }
 
     void Update()

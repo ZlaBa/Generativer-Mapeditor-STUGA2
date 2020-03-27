@@ -16,6 +16,7 @@ public class PlayerActions : MonoBehaviour
     
     //variable Daten
     [SerializeField] private float moveSpeed = 1.0f;
+    public int Luft = 360;
 
     private void FixedUpdate()
     {

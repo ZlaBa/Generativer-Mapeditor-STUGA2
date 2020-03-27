@@ -10,6 +10,8 @@ TagManager:
   - Baum
   - GameData
   - TreeSpawner
+  - InteractableObject
+  - SpawnableGround
   layers:
   - Default
   - TransparentFX

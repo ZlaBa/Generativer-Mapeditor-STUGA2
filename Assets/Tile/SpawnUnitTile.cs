@@ -55,6 +55,17 @@ public class SpawnUnitTile : Tile
             }
         }*/
     }
+    /*
+    public bool StartUp(Vector3Int position, Tilemaps.ITilemap tilemap, GameObject go); 
+    {
+        for (int i = Sprites.Length - 1; i >= 0; i--)
+        {
+            if (Units >= SpawnUnitMinimum[i]])
+            {
+                Instantiate(SpawningObject[i]);
+            }
+        }
+    }*/
 
 
 #if UNITY_EDITOR

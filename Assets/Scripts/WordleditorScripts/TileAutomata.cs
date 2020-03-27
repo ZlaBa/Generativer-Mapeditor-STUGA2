@@ -59,10 +59,10 @@ public class TileAutomata : MonoBehaviour
 
     public Vector3Int kartenMasse; //Kartengrösse
 
+    public Tilemap PlayerMap;
     public Tilemap ObjectMap;
     public Tilemap UnwalkableMap;
-    public Tilemap topMap;
-    public Tilemap botMap;
+    public Tilemap GroundMap;
     public UnitTile waldTrees;
     public Tile waldTile;
     public UnitTile wasserTiefe;
@@ -152,11 +152,11 @@ public class TileAutomata : MonoBehaviour
                 }
                 if (feld.Terrain == FeldTerrain.Sand)
                 {
-                    topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), sandTile);
+                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), sandTile);
                 }
                 if (feld.Terrain == FeldTerrain.Gestein)
                 {
-                    topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), gesteinTile);
+                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), gesteinTile);
                 }
                 if (feld.Terrain == FeldTerrain.Wasser)
                 {
@@ -167,7 +167,7 @@ public class TileAutomata : MonoBehaviour
                 if (feld.Terrain == FeldTerrain.Wiese)
                 {
                     wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitGenerationMinimum, wieseTile.UnitGenerationMaximum);
-                    botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
+                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
                     wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitSpawnMinimum, wieseTile.UnitSpawnMaximum);
                 }
             }
@@ -352,12 +352,12 @@ public class TileAutomata : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   // Befehl zum Start
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyUp(KeyCode.KeypadEnter))
         {
             doSim(rechenRunden);
         }
         // Befehl zur Löschung
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyUp(KeyCode.Delete))
         {
             ClearMap(true);
         }
@@ -393,8 +393,7 @@ public void SaveAssetMap()
         _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
         ObjectMap.ClearAllTiles();
         UnwalkableMap.ClearAllTiles();
-        topMap.ClearAllTiles();
-        botMap.ClearAllTiles();
+        GroundMap.ClearAllTiles();
 
         if (complete)
         {

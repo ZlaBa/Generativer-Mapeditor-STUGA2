@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 10;
+    public int Luft;
+    public int MaxLuft = 360;
+
+    public void Start()
+    {
+        Luft = MaxLuft;
+    }
 
     public void TakeDamage()
     {
-        health -= 2;
+        MaxLuft -= 2;
     }
+
+
 }

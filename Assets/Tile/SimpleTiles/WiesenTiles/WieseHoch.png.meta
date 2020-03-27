@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 30dd19f909a43bc48943dda187963364
+labels:
+- SpawnableGround
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
