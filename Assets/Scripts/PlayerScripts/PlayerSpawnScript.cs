@@ -10,46 +10,57 @@ public class PlayerSpawnScript : MonoBehaviour
 
     public Grid grid;
     public Tilemap IsoGroundMap;
-    public Transform spawnPos;
+    //public Transform spawnPos;
     public GameObject Player;
     private GameData _gameData;
 
     private void Start()
     {
-        _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
 
-        for (int x=0; x < _gameData.GetWidth(); x++)
-        {
-            for( int y=0; y < _gameData.GetHeight(); y++)
-            {
-                var feld = _gameData.GetFeld(x, y);
-                Debug.Log(_gameData.GetFeld(x, y));
-                if ( feld.Terrain == FeldTerrain.Wiese )
-                {
-                    Player.layer = 2;
-                    /*
-                    GridLayout gridLayout = transform.parent.GetComponentInParent<GridLayout>();
-                    Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
-                    transform.position = gridLayout.CellToWorld(cellPosition);
-                    */
-                    //int feldKoordinate = int.Parse(feld.ToString());
-                    Instantiate(Player, new Vector3(IsoGroundMap.origin.x, IsoGroundMap.origin.y), spawnPos.rotation);
-                    //Instantiate(Player, new Vector3(IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y), spawnPos.rotation);
-                    //Instantiate(Player, new Vector3Int(cellPosition.x, cellPosition.y, z: 0), spawnPos.rotation);
-                    //Instantiate(Player, new Vector3Int((IsoGroundMap.origin.x, IsoGroundMap.origin.y), (IsoGroundMap.origin.x, IsoGroundMap.origin.y));
-                    //Debug.Log("X: " + (IsoGroundMap.origin.x) + " Y: " + (IsoGroundMap.origin.y));
-                    //Debug.Log("Player was spawned at" + (IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y) + "!");
-                    Debug.Log("Player was spawned at" + (IsoGroundMap.origin.x, IsoGroundMap.origin.y) + "!");
-                    //Debug.Log("Player was spawned at cellPosition.x: " + (cellPosition.x) + " cellPosition.y: " + (cellPosition.y) + " spawnPos.rotation: " + (spawnPos.rotation) + "!");
-                    //Debug.Log("Mission Complete!");
-                    return;
-                }
-            }
-        }
     }
 
     void Update()
-    {/*
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            Debug.Log("Gstartet");
+            _gameData = GameObject.FindWithTag("GameData").GetComponent<GameData>();
+            Debug.Log(_gameData.GetWidth());
+
+            IsoGroundMap.CompressBounds();
+
+            for (int x = 0; x < _gameData.GetWidth(); x++)
+            {
+
+                for (int y = 0; y < _gameData.GetHeight(); y++)
+                {
+                    var feld = _gameData.GetFeld(x, y);
+                    Debug.Log(_gameData.GetFeld(x, y));
+                    if (feld.Terrain == FeldTerrain.Wiese)
+                    {
+                        Player.layer = 5;
+                        /*
+                        GridLayout gridLayout = transform.parent.GetComponentInParent<GridLayout>();
+                        Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
+                        transform.position = gridLayout.CellToWorld(cellPosition);
+                        */
+                        //int feldKoordinate = int.Parse(feld.ToString());
+                        //Instantiate(Player, new Vector3(IsoGroundMap.origin.x, IsoGroundMap.origin.y), spawnPos.rotation);
+                        Instantiate(Player, IsoGroundMap.GetCellCenterWorld(new Vector3Int(x - 7, y - 7, 0)), Quaternion.identity);
+                        //Instantiate(Player, new Vector3(IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y), spawnPos.rotation);
+                        //Instantiate(Player, new Vector3Int(cellPosition.x, cellPosition.y, z: 0), spawnPos.rotation);
+                        //Instantiate(Player, new Vector3Int((IsoGroundMap.origin.x, IsoGroundMap.origin.y), (IsoGroundMap.origin.x, IsoGroundMap.origin.y));
+                        //Debug.Log("X: " + (IsoGroundMap.origin.x) + " Y: " + (IsoGroundMap.origin.y));
+                        //Debug.Log("Player was spawned at" + (IsoGroundMap.origin.x + IsoGroundMap.cellSize.x * x, IsoGroundMap.origin.y + IsoGroundMap.cellSize.y * y) + "!");
+                        Debug.Log("Player was spawned at X: " + (IsoGroundMap.GetCellCenterWorld(new Vector3Int(x, y, 0)).x) + " Y: " + (IsoGroundMap.GetCellCenterWorld(new Vector3Int(x, y, 0)).y) + "Q: " + (Quaternion.identity) + "!");
+                        //Debug.Log("Player was spawned at cellPosition.x: " + (cellPosition.x) + " cellPosition.y: " + (cellPosition.y) + " spawnPos.rotation: " + (spawnPos.rotation) + "!");
+                        //Debug.Log("Mission Complete!");
+                        return;
+                    }
+                }
+            }
+        }
+        /*
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 0 << 8;
 

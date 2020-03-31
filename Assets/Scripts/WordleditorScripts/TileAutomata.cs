@@ -63,13 +63,17 @@ public class TileAutomata : MonoBehaviour
     public Tilemap ObjectMap;
     public Tilemap UnwalkableMap;
     public Tilemap GroundMap;
+    public Tilemap RuleTileMap;
+    //public Tilemap BackgroundMap;
+
     public UnitTile waldTrees;
-    public Tile waldTile;
+    public RuleTile RuledWaldTile;
     public UnitTile wasserTiefe;
-    public Tile wasserTile;
-    public SpawnUnitTile wieseTile;
-    public Tile sandTile;
-    public Tile gesteinTile;
+    public RuleTile RuledWasserTile;
+    public SpawnUnitTile wieseHight;
+    public RuleTile RuledWieseTile;
+    public RuleTile RuledSandTile;
+    public RuleTile RuledGesteinTile;
 
     private GameData _gameData;
 
@@ -146,29 +150,31 @@ public class TileAutomata : MonoBehaviour
                 {
                     // Konfiguration des hinzuzufügenden Tiles
                     waldTrees.Units = CalculateUnits(neighborCount[FeldTerrain.Wald], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum); //waldTrees.Sprites.Length
-
                     ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTrees);
-                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), waldTile);
+
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledWaldTile);
                 }
                 if (feld.Terrain == FeldTerrain.Sand)
                 {
-                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), sandTile);
+                    RuleTileMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledSandTile);
                 }
                 if (feld.Terrain == FeldTerrain.Gestein)
                 {
-                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), gesteinTile);
+                    RuleTileMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledGesteinTile);
                 }
                 if (feld.Terrain == FeldTerrain.Wasser)
                 {
                     wasserTiefe.Units = CalculateUnits(neighborCount[FeldTerrain.Wasser], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum);
-                    ObjectMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
-                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTile);
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
+
+                    RuleTileMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledWasserTile);
                 }
                 if (feld.Terrain == FeldTerrain.Wiese)
                 {
-                    wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitGenerationMinimum, wieseTile.UnitGenerationMaximum);
-                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseTile);
-                    wieseTile.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseTile.UnitSpawnMinimum, wieseTile.UnitSpawnMaximum);
+                    wieseHight.Units = CalculateUnits(neighborCount[FeldTerrain.Wiese], wieseHight.UnitGenerationMinimum, wieseHight.UnitGenerationMaximum);
+                    GroundMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wieseHight);
+
+                    RuleTileMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledWieseTile);
                 }
             }
         }
@@ -345,7 +351,7 @@ public class TileAutomata : MonoBehaviour
             }
         }
     }
-    private void Start()
+    private void Awake()
     {
         doSim(rechenRunden);
     }
@@ -394,6 +400,7 @@ public void SaveAssetMap()
         ObjectMap.ClearAllTiles();
         UnwalkableMap.ClearAllTiles();
         GroundMap.ClearAllTiles();
+        RuleTileMap.ClearAllTiles();
 
         if (complete)
         {

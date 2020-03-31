@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem
+public class HealthSystem : MonoBehaviour
 {
     public int Air;
     public int maxAir;
