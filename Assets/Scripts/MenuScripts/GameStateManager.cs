@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class GameManager : MonoBehaviour
+public class GameStateManager : MonoBehaviour
 {
     public GameObject GameOverScreen;
     public GameObject YouWinScreen;

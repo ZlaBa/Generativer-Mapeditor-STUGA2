@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
             if (currentObjectScript.inventory && inventory.InventoryFull() == true)
             {
                 inventory.AddItem(_endGameObject);
-                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().YouWin();
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameStateManager>().YouWin();
             }
         }
 
