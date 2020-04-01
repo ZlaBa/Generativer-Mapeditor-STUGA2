@@ -12,6 +12,8 @@ TagManager:
   - TreeSpawner
   - InteractableObject
   - SpawnableGround
+  - GameManager
+  - EndGameObject
   layers:
   - Default
   - TransparentFX

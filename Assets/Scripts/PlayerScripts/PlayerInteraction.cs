@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public GameObject _endGameObject = null;
     public GameObject currentObject = null;
     public InteractionObject currentObjectScript = null;
     public PlayerInventoryScript inventory;
@@ -16,6 +17,16 @@ public class PlayerInteraction : MonoBehaviour
             if (currentObjectScript.inventory)
             {
                 inventory.AddItem(currentObject);
+            }
+        }
+
+        if (Input.GetButtonDown("Interact") && _endGameObject)
+        {
+            //Ist dies ein Inventory Objekt?
+            if (currentObjectScript.inventory && inventory.InventoryFull() == true)
+            {
+                inventory.AddItem(_endGameObject);
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().YouWin();
             }
         }
 
@@ -39,6 +50,8 @@ public class PlayerInteraction : MonoBehaviour
                 Debug.Log("Can't find a ShuttlePiece!");
             }
         }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,6 +61,13 @@ public class PlayerInteraction : MonoBehaviour
             Debug.Log("Interaktives Objekt: " + collision.name);
             currentObject = collision.gameObject;
             currentObjectScript = currentObject.GetComponent<InteractionObject>();
+        }
+
+        if (collision.CompareTag("EndGameObject"))
+        {
+            Debug.Log("End Game Objekt: " + collision.name);
+            _endGameObject = collision.gameObject;
+            currentObjectScript = _endGameObject.GetComponent<InteractionObject>();
         }
     }
 
@@ -59,7 +79,16 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentObject = null;
             }
-            Debug.Log("Contact lost");
+            Debug.Log("Contact with currentObjet lost");
+        }
+
+        if (collision.CompareTag("EndGameObject"))
+        {
+            if (collision.gameObject == _endGameObject)
+            {
+                _endGameObject = null;
+            }
+            Debug.Log("Contact with _endGameObject lost");
         }
     }
 }

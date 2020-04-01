@@ -42,7 +42,8 @@ public class PlayerStats : MonoBehaviour
         }
         if (Air <= 0)
         {
-            print("YOU DIED!");
+            //print("YOU DIED!");
+            FindObjectOfType<GameManager>().GameOver();
         }
         updateUI();
     }

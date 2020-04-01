@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: -209239909116103504}
   - component: {fileID: 1724730291012860409}
   - component: {fileID: 8013730233643341034}
-  m_Layer: 10
+  - component: {fileID: -1548373319897890877}
+  m_Layer: 5
   m_Name: Player_Kosmonaut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,3 +191,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &-1548373319897890877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031111055734879707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62b0300dccccc84b98600545b098528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Air: 360
+  airOverTime: 1
+  AirBar: {fileID: 0}
+  playerSpeed: 1
+  movementAirFactor: 2

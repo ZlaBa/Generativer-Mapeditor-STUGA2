@@ -29,6 +29,27 @@ public class PlayerInventoryScript : MonoBehaviour
         }
     }
 
+    public bool InventoryFull()
+    {
+        bool _inventoryFull = false;
+
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] == null)
+            {
+                _inventoryFull = false;
+                return _inventoryFull;
+            }
+            else
+            {
+                _inventoryFull = true;
+            }
+        }
+        return _inventoryFull;
+    }
+
+
+    // FUNKTIONIERT NICHT!!!
     public bool FindItem(GameObject item)
     {
         for(int i = 0; i < inventory.Length; i++)
