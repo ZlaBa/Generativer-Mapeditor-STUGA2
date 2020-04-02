@@ -167,7 +167,7 @@ public class TileAutomata : MonoBehaviour
                     wasserTiefe.Units = CalculateUnits(neighborCount[FeldTerrain.Wasser], waldTrees.UnitGenerationMinimum, waldTrees.UnitGenerationMaximum);
                     UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), wasserTiefe);
 
-                    RuleTileMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledWasserTile);
+                    UnwalkableMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), RuledWasserTile);
                 }
                 if (feld.Terrain == FeldTerrain.Wiese)
                 {

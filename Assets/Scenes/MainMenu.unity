@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 173284493}
   - component: {fileID: 173284497}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: StartMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 703669484}
   - component: {fileID: 703669483}
   m_Layer: 5
-  m_Name: Optionen
+  m_Name: Anleitung
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +688,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 703669484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173284492}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &703669484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,7 +1110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Optionen
+  m_Text: Anleitung
 --- !u!222 &2085209329
 CanvasRenderer:
   m_ObjectHideFlags: 0

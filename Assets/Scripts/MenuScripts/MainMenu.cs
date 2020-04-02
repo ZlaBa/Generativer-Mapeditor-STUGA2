@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void Anleitung()
+    {
+        Debug.Log("Anleitung aktiviert.");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Ende, aus!");

@@ -25,16 +25,16 @@ public class GameStateManager : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("Restart aktiviert.");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Szene wurde neu gestartet.");
         GameOverScreen.SetActive(false);
-        YouWinScreen.SetActive(false);
-        SceneManager.LoadScene("MapEditor");
+        Debug.Log("GameOverScreen wurde ausgeblendet.");
     }
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        GameOverScreen.SetActive(false);
-        YouWinScreen.SetActive(false);
     }
 
     public void YouWin()
