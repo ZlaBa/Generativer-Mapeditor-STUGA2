@@ -358,7 +358,7 @@ public class TileAutomata : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   // Befehl zum Start
-        if (Input.GetKeyUp(KeyCode.KeypadEnter))
+        if (Input.GetKeyUp(KeyCode.Backspace))
         {
             doSim(rechenRunden);
         }

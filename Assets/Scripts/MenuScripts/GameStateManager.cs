@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+    public GameObject _inGameMenu;
+    public GameObject _inGameAnleitung;
     public GameObject GameOverScreen;
     public GameObject YouWinScreen;
 
@@ -21,6 +23,21 @@ public class GameStateManager : MonoBehaviour
             GameOverScreen.SetActive(true);
         }
 
+    }
+
+    bool GameIsPaused = false;
+
+    public void PauseGame()
+    {
+        if (GameIsPaused)
+        {
+            Time.timeScale = 1;
+            GameIsPaused = false;
+        } else
+        {
+            Time.timeScale = 0;
+            GameIsPaused = true;
+        }
     }
 
     public void Restart()
@@ -41,5 +58,43 @@ public class GameStateManager : MonoBehaviour
     {
         Debug.Log("Du hesches gschafft!");
         YouWinScreen.SetActive(true);
+        PauseGame();
+    }
+
+
+    public void OpenInGameMenu()
+    {
+        _inGameMenu.SetActive(true);
+        PauseGame();
+    }
+
+    public void BackToGame()
+    {
+        PauseGame();
+        _inGameMenu.SetActive(false);
+        _inGameAnleitung.SetActive(false);
+    }
+
+    public void InGameAnleitung()
+    {
+        _inGameAnleitung.SetActive(true);
+    }
+
+    public void InGameAnleitungClose()
+    {
+        _inGameAnleitung.SetActive(false);
+    }
+
+    public void InGameBackToMain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            OpenInGameMenu();
+        }
     }
 }
